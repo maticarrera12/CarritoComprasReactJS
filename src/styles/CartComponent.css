@@ -16,12 +16,12 @@
 }
 
 .outlined-button {
-    border: solid 1px rgb(112, 112, 244);
+    border: solid 1px rgb(170, 170, 235);
     background-color: white;
 }
 
 .colored-button {
-    border: solid 1px grey;
+    border: solid 1px rgb(168, 167, 167);
     background-color: white;
 }
 
