@@ -46,7 +46,7 @@ export const NavBarComponent = ({onSearch}) => {
                 <ShoppingCart color="action"/>
               </Badge>
             </NavLink>
-            <SearchComponent onSearch={onSearch}/>
+            <SearchComponent onSearch={onSearch} />
       
           </div>
         </div>
