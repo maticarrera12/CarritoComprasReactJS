@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import '../styles/CartComponent.css'
 import Swal from "sweetalert2";
 
 export const CartPage = () => {

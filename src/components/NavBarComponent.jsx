@@ -3,6 +3,7 @@ import { Badge } from "@mui/material";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import '../styles/NavBarComponent.css'
 
 export const NavBarComponent = () => {
 
@@ -39,8 +40,8 @@ export const NavBarComponent = () => {
               </li>
             </ul>
             <NavLink to={'/carrito'}>
-              <Badge badgeContent={shoppingList.length} color="primary">
-                <ShoppingCart color="action" />
+              <Badge badgeContent={shoppingList.length} color="primary" className="carrito-badge">
+                <ShoppingCart color="action"/>
               </Badge>
             </NavLink>
             <form className="d-flex" role="search">

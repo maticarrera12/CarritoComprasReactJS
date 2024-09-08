@@ -29,7 +29,7 @@ export const CardComponent = ({
   }
   useEffect(() => {
     checkAdded()
-  }, [])
+  }, [shoppingList])
   
   return (
     <div className="card">
@@ -38,7 +38,7 @@ export const CardComponent = ({
       <div className="card-content">
         <h3 className="card-title">{title}</h3>
         <p className="card-description">{description}</p>
-        <p className="card-price">{price}</p>
+        <p className="card-price">${price}</p>
 
         {added ? (
           <button type="button" className="remove-btn" onClick={removeProduct}>
