@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import Swal from "sweetalert2";
-
+import '../styles/CartComponent.css'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 export const CartPage = () => {
   const { shoppingList, removeProduct, incrementQuantity, decrementQuantity, emptyCart } = useContext(CartContext);
  const calculateTotal =()=>{
@@ -46,25 +47,25 @@ export const CartPage = () => {
               <td>{(product.price*product.quantity).toFixed(2)}$</td>
               <td className="btn-cant">
                 <button
-                  className="btn btn-outline-primary"
+                  className="outlined-button"
                   onClick={() => decrementQuantity(product.id)}
                 >
                   -
                 </button>
-                <button className="btn btn-primary">{product.quantity}</button>
+                <button className="colored-button">{product.quantity}</button>
                 <button
-                  className="btn btn-outline-primary"
+                  className="outlined-button"
                   onClick={() => incrementQuantity(product.id)}
                 >
                   +
                 </button>
               </td>
-              <td>
+              <td className="delete-cell">
                 <button
-                  className="btn btn-danger"
+                  className="delete-button"
                   onClick={() => removeProduct(product.id)}
                 >
-                  Eliminar
+                  <DeleteForeverIcon/>
                 </button>
               </td>
             </tr>

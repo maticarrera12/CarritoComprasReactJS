@@ -1,0 +1,43 @@
+
+.table th, .table td {
+    vertical-align: middle; 
+}
+
+
+.btn-cant {
+    white-space: nowrap; 
+    text-align: center; 
+}
+
+.btn-cant button {
+    width: 33%;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.outlined-button {
+    border: solid 1px rgb(112, 112, 244);
+    background-color: white;
+}
+
+.colored-button {
+    border: solid 1px grey;
+    background-color: white;
+}
+
+.delete-button {
+    background-color: rgb(220, 53, 69);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+.delete-cell {
+    text-align: right;
+}
+
+.d-grid{
+    margin-bottom: 20px;
+}
