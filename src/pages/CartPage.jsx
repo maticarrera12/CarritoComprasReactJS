@@ -3,7 +3,7 @@ import { CartContext } from "../context/CartContext";
 import Swal from "sweetalert2";
 
 export const CartPage = () => {
-  const { shoppingList, removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext);
+  const { shoppingList, removeProduct, incrementQuantity, decrementQuantity, emptyCart } = useContext(CartContext);
  const calculateTotal =()=>{
   return shoppingList.reduce((total,product)=>total + product.price * product.quantity, 0).toFixed(2)
  }
@@ -14,6 +14,18 @@ export const CartPage = () => {
     icon: 'success',
     title: 'La compra se ha realizado con exito',
     html: `<p> Has comprado: </p> <pre>${productsPurchased}</pre>`
+  })
+}
+
+ const handlerEmpty = ()=>{
+  const productsPurchased = shoppingList.map(product => `${product.title} x ${product.quantity}`).join('\n')
+  Swal.fire({
+    icon: 'error',
+    title: 'El carrito se ha vaciado',
+    html: `<p> Has borrado de tu carrito: </p> <pre>${productsPurchased}</pre>`,
+    didClose:()=>{
+      emptyCart()
+    }
   })
 }
   return (
@@ -69,7 +81,7 @@ export const CartPage = () => {
         <button className="btn btn-success" type="button" onClick={handlerPurchase}>
           Compra
         </button>
-        <button className="btn btn-danger" type="button">
+        <button className="btn btn-danger" type="button" onClick={handlerEmpty}>
           Vaciar Carrito
         </button>
       </div>

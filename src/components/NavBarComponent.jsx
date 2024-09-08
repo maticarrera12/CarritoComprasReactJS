@@ -4,10 +4,12 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import '../styles/NavBarComponent.css'
+import { SearchComponent } from "./SearchComponent";
 
-export const NavBarComponent = () => {
+export const NavBarComponent = ({onSearch}) => {
 
   const {shoppingList} = useContext(CartContext)
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -44,17 +46,7 @@ export const NavBarComponent = () => {
                 <ShoppingCart color="action"/>
               </Badge>
             </NavLink>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <SearchComponent onSearch={onSearch}/>
       
           </div>
         </div>

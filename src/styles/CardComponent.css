@@ -29,6 +29,10 @@
     font-weight: bold;
 }
 
+.left-align{
+    text-align: end;
+}
+
 .remove-btn{
     background-color: rgb(171, 12, 12);
     color: white;

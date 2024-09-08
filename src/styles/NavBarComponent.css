@@ -1,12 +1,10 @@
-/* .carrito-badge{
-    margin-right: 10px;
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
 }
-@media screen and (max-width:992px) {
-    .carrito-badge{
-        margin-bottom: 10px;
-    }
-} */
-
 .carrito-badge{
     margin-bottom: 10px;
 }

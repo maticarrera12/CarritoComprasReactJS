@@ -38,9 +38,10 @@ export const CardComponent = ({
       <div className="card-content">
         <h3 className="card-title">{title}</h3>
         <p className="card-description">{description}</p>
+        
+    <div className="left-align">
         <p className="card-price">${price}</p>
-
-        {added ? (
+        {added  ? (
           <button type="button" className="remove-btn" onClick={removeProduct}>
             Quitar del carrito
           </button>
@@ -49,6 +50,7 @@ export const CardComponent = ({
             Agregar al carrito
           </button>
         )}
+        </div>
       </div>
     </div>
   );
