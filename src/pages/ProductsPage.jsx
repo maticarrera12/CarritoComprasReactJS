@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CardComponent } from "../components/CardComponent";
 import { ProductContext } from "../context/ProductContext";
 import { CartContext } from "../context/CartContext";
@@ -17,7 +17,7 @@ export const ProductsPage = ({ searchTerm }) => {
 
   // Filtrar productos por búsqueda
   const filteredProducts = products.filter(product =>
-    product.title.toLowerCase().includes(searchTerm)
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const currentProducts = filteredProducts.slice(indexFirstItem, indexLastItem);
@@ -27,6 +27,11 @@ export const ProductsPage = ({ searchTerm }) => {
   };
 
   const totalPages = Math.ceil(filteredProducts.length / itemPerPage);
+
+  // Resetear página a 1 cuando cambia el término de búsqueda
+  useEffect(() => {
+    setPage(1);
+  }, [searchTerm]);
 
   return (
     <>
